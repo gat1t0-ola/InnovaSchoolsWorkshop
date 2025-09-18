@@ -1,0 +1,107 @@
+/*
+  Archivo de estilos principal
+  Paleta: Azul real (#1e40af), blanco (#f8fafc), verde césped (#10b981)
+  Mobile-first y BEM
+*/
+:root {
+  --color-azul: #1e40af;
+  --color-blanco: #f8fafc;
+  --color-verde: #10b981;
+  --color-hover: #2563eb;
+  --color-card-shadow: rgba(30, 64, 175, 0.12);
+}
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--color-blanco);
+  color: #222;
+  min-height: 100vh;
+}
+.hero-section {
+  background: linear-gradient(120deg, var(--color-azul) 60%, var(--color-verde) 100%);
+  color: var(--color-blanco);
+  padding: 120px 0 80px 0;
+}
+.equipo-card {
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px var(--color-card-shadow);
+}
+.equipo-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 24px var(--color-hover);
+}
+.estadio-card {
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 2px 8px var(--color-card-shadow);
+}
+.estadio-card:hover {
+  box-shadow: 0 6px 20px var(--color-verde);
+}
+.carousel-item img {
+  border-radius: 10px;
+  object-fit: cover;
+  height: 320px;
+}
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.btn-success {
+  background: var(--color-verde);
+  border: none;
+}
+.btn-success:hover {
+  background: #059669;
+  color: var(--color-blanco);
+}
+.btn-primary {
+  background: var(--color-azul);
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--color-hover);
+  color: var(--color-blanco);
+}
+.btn-outline-primary:hover {
+  background: var(--color-azul);
+  color: var(--color-blanco);
+}
+.btn-outline-success:hover {
+  background: var(--color-verde);
+  color: var(--color-blanco);
+}
+.btn-outline-info:hover {
+  background: #0ea5e9;
+  color: var(--color-blanco);
+}
+.btn-outline-danger:hover {
+  background: #be185d;
+  color: var(--color-blanco);
+}
+footer {
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -2px 12px var(--color-card-shadow);
+}
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0 40px 0;
+  }
+  .carousel-item img {
+    height: 180px;
+  }
+}
+/* Animación de entrada para cards */
+.equipo-card, .estadio-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.7s forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* ...otros estilos personalizados... */
